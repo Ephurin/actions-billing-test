@@ -1,0 +1,14 @@
+name: GitHub Actions Billing Probe
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  billing-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Confirm runner executed
+        run: |
+          echo "PUBLIC_ACTIONS_RUNNER_STARTED"
+          uname -s
